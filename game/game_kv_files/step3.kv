@@ -1,0 +1,30 @@
+#: import Animation kivy.animation.Animation
+
+<BasicLevel3>:
+    CustBoxLayout:
+        BoxLayout:
+            border: 120
+            id: container
+            sweep_threshold: .4
+            Carousel:
+                id: carousel
+                ignore_perpendicular_swipes: True
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: root.goBack()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    Label:
+                        text: 'Making Smaller sets'
+                    Label:
+                        text: " Hi There!\nWelcome to this challenge,\n Your quest starts here.\n Use the top right arrow button to start"

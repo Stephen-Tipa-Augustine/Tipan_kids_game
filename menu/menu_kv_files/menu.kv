@@ -1,0 +1,97 @@
+<ProfilePage>:
+    CustBoxLayout:
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'app_data/images/buttons/background1.png'
+
+        BoxLayout:
+            id: container
+            orientation: 'vertical'
+            Label:
+                halign: 'center'
+                valign: 'middle'
+                text: 'Login into your account'
+            BoxLayout:
+                size_hint_y: .7
+                Label:
+                    text: 'User Name'
+                MyTextInput:
+                    write_tab: False
+                    id: user
+                    hint_text: 'User name'
+                    font_size: 50
+                    size_hint_x: 1.6
+                    height: '30dp'
+                    multiline: False
+                    halign: 'center'
+                    padding_x: self.width/2
+                    on_text: app.update_padding(args[0])
+                    #padding: [30,5,30,5]
+                    border: [10,10,10,10]
+                Label:
+                    text: ''
+            BoxLayout:
+                size_hint_y: .7
+                Label:
+                    text: 'Your Password'
+                MyTextInput:
+                    id: password
+                    write_tab: False
+                    hint_text: 'Password'
+                    password: True
+                    size_hint_x: 1.6
+                    height: '30dp'
+                    font_size: 50
+                    multiline: False
+                    halign: 'center'
+                    padding_x: self.width/2
+                    on_text: app.update_padding(args[0])
+                    # padding: [30,5,30,5]
+                    border: [10,10,10,10]
+                    on_text_validate: root.login()
+
+                Label:
+                    text: ''
+            BoxLayout:
+                Label:
+                    text: ''
+                Button:
+                    text: 'Login'
+                    on_press: root.login()
+                Label:
+                    text: ''
+            Label:
+                text: "Don't have an account?"
+
+<PreMenuPage1>:
+    CustBoxLayout:
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'app_data/images/buttons/background1.png'
+
+        BoxLayout:
+            id: container
+            orientation: 'vertical'
+            spacing: 20
+            BoxLayout:
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-left.png'
+                    on_press: root.goBack()
+                Label:
+                    text: ''
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-right.png'
+                    on_press: root.goBack()
+
+            Button:
+                text: 'Take Me To A Game Session'
+                on_press: root.goToMenu()
+            Button:
+                text: 'Change Game Settings'
+                on_press: pass

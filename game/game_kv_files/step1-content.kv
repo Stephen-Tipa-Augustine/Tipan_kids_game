@@ -1,0 +1,522 @@
+#: import Animation kivy.animation.Animation
+#: import Clock kivy.clock.Clock
+#: import partial functools.partial
+#: import Pulser main.Pulser
+
+<BasicStep1_1>:
+    BoxLayout:
+        DraggableBoxLayout:
+            drag_classes: ['label']
+            orientation: 'vertical'
+            padding: '5dp'
+            spacing: '5dp'
+            canvas:
+                Color:
+                    rgba: (1, 0, 1, .2) if app.drag_controller.dragging and app.drag_controller.widget_dragged and app.drag_controller.widget_dragged.drag_cls == 'label' else (0, 0, 0, 0)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            DragLabel:
+                controllers: []
+                canvas.after:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'app_data/images/buttons/play.png'
+                drag_cls: 'label'
+            DragLabel:
+                controllers: []
+                text: 'Right2'
+                drag_cls: 'label'
+            DragLabel:
+                controllers: []
+                text: 'Right3'
+                drag_cls: 'label'
+            DragLabel:
+                controllers: []
+                text: 'Right4'
+                drag_cls: 'label'
+
+        DraggableBoxLayout:
+            drag_classes: ['label']
+            orientation: 'vertical'
+            padding: '5dp'
+            spacing: '5dp'
+            canvas:
+                Color:
+                    rgba: (1, 0, 1, .2) if app.drag_controller.dragging and app.drag_controller.widget_dragged and app.drag_controller.widget_dragged.drag_cls == 'label' else (0, 0, 0, 0)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: 'Left1'
+            Label:
+                text: 'Left2'
+            Label:
+                text: 'Left3'
+            Label:
+                text: 'Left4'
+
+<BasicStep1_2>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '5dp'
+        padding: '5dp'
+<BasicStep1_3>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '5dp'
+        padding: '5dp'
+<BasicStep1_4>:
+    on_open: Clock.schedule_interval(partial(root.refresh_health_and_score, score, health), .1)
+    CustBoxLayout:
+        BoxLayout:
+            top: 0
+            size_hint_y: .08
+            ActionBar:
+                ActionView:
+                    ActionPrevious:
+                        color: 0.6, 0.6, 0.4, 0.7
+                        title: "TipanKidsGame"
+                        with_previous: False
+                        app_icon: 'icon.ico'
+                        app_icon_width: 30
+                        app_icon_height: 30
+                    ActionButton:
+                        color: 1, 0.1, 0.4, 0.7
+                        text: "Quit"
+                        on_release: root.dismiss()
+                    ActionButton:
+                        color: 1, 0.1, 0.4, 0.7
+                        text: "Pause"
+                        on_release: pass
+                    ActionButton:
+                        color: 1, 0.1, 0.4, 0.7
+                        text: "Resume"
+                        on_release: pass
+
+        BoxLayout:
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '5dp'
+                padding: '5dp'
+                DraggableGridLayout:
+                    drag_classes: ['label1', 'label2', 'label3', 'label4', 'label5', 'label6']
+                    orientation: 'vertical'
+                    padding: '5dp'
+                    spacing: '12dp'
+                    id: parent
+                    cols: 4
+                    rows: 5
+                    canvas:
+                        Color:
+                            rgba: (1, 0, 1, .2) if app.drag_controller.dragging and app.drag_controller.widget_dragged and app.drag_controller.widget_dragged.drag_cls == 'label' else (0, 0, 0, 0)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    DragLabel:
+                        identity: '1'
+                        drag_cls: 'label1'
+                        id: label1
+                        canvas.after:
+                            Color:
+                                rgba: .7, .5, .1, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '2'
+                        drag_cls: 'label2'
+                        id: label2
+                        canvas.after:
+                            Color:
+                                rgba: .1, .6, .3, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '3'
+                        drag_cls: 'label3'
+                        id: label3
+                        canvas.after:
+                            Color:
+                                rgba: 0, 0, 1, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '4'
+                        drag_cls: 'label4'
+                        id: label4
+                        canvas.after:
+                            Color:
+                                rgba: .7, .7, .1, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '5'
+                        drag_cls: 'label5'
+                        id: label5
+                        canvas.after:
+                            Color:
+                                rgba: .3, .5, .8, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '6'
+                        drag_cls: 'label6'
+                        id: label6
+                        canvas.after:
+                            Color:
+                                rgba: 1, 0, 0, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '1'
+                        drag_cls: 'label1'
+                        id: label7
+                        canvas.after:
+                            Color:
+                                rgba: .7, .5, .1, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '3'
+                        drag_cls: 'label3'
+                        id: label8
+                        canvas.after:
+                            Color:
+                                rgba: 0, 0, 1, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '2'
+                        drag_cls: 'label2'
+                        id: label9
+                        canvas.after:
+                            Color:
+                                rgba: .1, .6, .3, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '4'
+                        drag_cls: 'label4'
+                        id: label10
+                        canvas.after:
+                            Color:
+                                rgba: .7, .7, .1, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '3'
+                        drag_cls: 'label3'
+                        id: label11
+                        canvas.after:
+                            Color:
+                                rgba: 0, 0, 1, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '4'
+                        drag_cls: 'label4'
+                        id: label12
+                        canvas.after:
+                            Color:
+                                rgba: .7, .7, .1, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '5'
+                        drag_cls: 'label5'
+                        id: label13
+                        canvas.after:
+                            Color:
+                                rgba: .3, .5, .8, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '4'
+                        drag_cls: 'label4'
+                        id: label14
+                        canvas.after:
+                            Color:
+                                rgba: .7, .7, .1, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '5'
+                        drag_cls: 'label5'
+                        id: label15
+                        canvas.after:
+                            Color:
+                                rgba: .3, .5, .8, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    DragLabel:
+                        identity: '5'
+                        drag_cls: 'label5'
+                        id: label16
+                        canvas.after:
+                            Color:
+                                rgba: .3, .5, .8, .9
+                            Line:
+                                width: 5.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+
+                BoxLayout:
+                    size_hint_y: .2
+                    Label:
+                        text: ''
+                    Button:
+                        text: 'Re-Organise'
+                        on_press: app.re_organise([label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15, label16])
+                        canvas.after:
+                            Color:
+                                rgba: [.3, .4, .5, .7]
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+
+                    Label:
+                        text: ''
+
+            BoxLayout:
+                orientation: 'vertical'
+                padding: '5dp'
+                spacing: '5dp'
+                canvas:
+                    Color:
+                        rgba: (1, 0, 1, .2) if app.drag_controller.dragging and app.drag_controller.widget_dragged and app.drag_controller.widget_dragged.drag_cls == 'label' else (0, 0, 0, 0)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                BoxLayout:
+                    size_hint_y: .25
+                    Button:
+                        on_press: app.retry(parent, False); Pulser.stop_wrong_animation(wrong.anim, wrong)
+                        canvas.after:
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                                source: 'app_data/images/buttons/undo_button.png'
+                    Label:
+                        text: 'Score'
+                    Label:
+                        text: str(root.score)
+                        center: self.center
+                        id: score
+                        canvas.after:
+                            Color:
+                                rgba: .1, 1, .1, .9
+                            Line:
+                                width: 2.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                    Label:
+                        text: 'Life'
+                    Label:
+                        text: str(root.health)
+                        center: self.center
+                        id: health
+                        canvas.after:
+                            Color:
+                                rgba: .1, 1, .1, .9
+                            Line:
+                                width: 2.
+                                circle:
+                                    (self.center_x, self.center_y, min(self.width, self.height)/ 2)
+                BoxLayout:
+                    padding: '5dp'
+                    spacing: '10dp'
+                    DraggableGridLayout:
+                        cols: 2
+                        rows: 3
+                        padding: '5dp'
+                        spacing: '10dp'
+                        identity: '1'
+                        drag_classes: ['label1', 'label2', 'label3', 'label4', 'label5', 'label6']
+                        controllers: [correct, wrong, retry, check]
+                        id: container1
+                        canvas:
+                            Color:
+                                rgba: .7, .5, .1, .9
+                            Line:
+                                width: 4.
+                                rectangle: (self.x, self.y, self.width, self.height)
+                    DraggableGridLayout:
+                        cols: 2
+                        rows: 3
+                        padding: '5dp'
+                        spacing: '10dp'
+                        identity: '2'
+                        drag_classes: ['label1', 'label2', 'label3', 'label4', 'label5', 'label6']
+                        controllers: [correct, wrong, retry, check]
+                        id: container2
+                        canvas:
+                            Color:
+                                rgba: .1, .6, .3, .9
+                            Line:
+                                width: 4.
+                                rectangle: (self.x, self.y, self.width, self.height)
+                    DraggableGridLayout:
+                        cols: 2
+                        rows: 3
+                        padding: '5dp'
+                        spacing: '10dp'
+                        identity: '3'
+                        drag_classes: ['label1', 'label2', 'label3', 'label4', 'label5', 'label6']
+                        controllers: [correct, wrong, retry, check]
+                        id: container3
+                        canvas:
+                            Color:
+                                rgba: 0, 0, 1, .9
+                            Line:
+                                width: 4.
+                                rectangle: (self.x, self.y, self.width, self.height)
+                BoxLayout:
+                    padding: '5dp'
+                    spacing: '10dp'
+                    DraggableGridLayout:
+                        cols: 2
+                        rows: 3
+                        padding: '5dp'
+                        spacing: '10dp'
+                        identity: '4'
+                        drag_classes: ['label1', 'label2', 'label3', 'label4', 'label5', 'label6']
+                        controllers: [correct, wrong, retry, check]
+                        id: container4
+                        canvas:
+                            Color:
+                                rgba: .7, .7, .1, .9
+                            Line:
+                                width: 4.
+                                rectangle: (self.x, self.y, self.width, self.height)
+                    DraggableGridLayout:
+                        cols: 2
+                        rows: 3
+                        padding: '5dp'
+                        spacing: '10dp'
+                        identity: '5'
+                        drag_classes: ['label1', 'label2', 'label3', 'label4', 'label5', 'label6']
+                        controllers: [correct, wrong, retry, check]
+                        id: container5
+                        canvas:
+                            Color:
+                                rgba: .3, .5, .8, .9
+                            Line:
+                                width: 4.
+                                rectangle: (self.x, self.y, self.width, self.height)
+                    DraggableGridLayout:
+                        cols: 2
+                        rows: 3
+                        padding: '5dp'
+                        spacing: '10dp'
+                        identity: '6'
+                        drag_classes: ['label1', 'label2', 'label3', 'label4', 'label5', 'label6']
+                        controllers: [correct, wrong, retry, check]
+                        id: container6
+                        canvas:
+                            Color:
+                                rgba: 1, 0, 0, .9
+                            Line:
+                                width: 4.
+                                rectangle: (self.x, self.y, self.width, self.height)
+                BoxLayout:
+                    size_hint_y: .5
+                    spacing: '8dp'
+                    padding: '8dp'
+                    Pulser:
+                        id: correct
+                        repeat: False
+                        bg_color: [.2, .4, .2, 1]
+                        canvas:
+                            Color:
+                                rgba: self.bg_color
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                        Label:
+                            text: 'Correct'
+                            halign: 'center'
+                    Pulser:
+                        id: wrong
+                        repeat: True
+                        bg_color: [.5, .25, .25, 1]
+                        canvas:
+                            Color:
+                                rgba: self.bg_color
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                        Label:
+                            text: 'Wrong'
+                            halign: 'center'
+                BoxLayout:
+                    size_hint_y: .5
+                    Button:
+                        id: retry
+                        text: 'Try Again'
+                        on_press: app.retry(parent)
+                    Button:
+                        id: check
+                        text: 'See Correct Answer'
+                        on_press: app.hint([[[label1, label7], container1], [[label2, label9], container2], [[label3, label8, label11], container3], [[label4, label10, label12, label14], container4],  [[label5, label13, label15, label16], container5],  [[label6], container6]])
+
+<BasicStep1_5>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '5dp'
+        padding: '5dp'
+<BasicStep1_6>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '5dp'
+        padding: '5dp'
+<BasicStep1_7>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '5dp'
+        padding: '5dp'
+<BasicStep1_8>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '5dp'
+        padding: '5dp'
+<BasicStep1_9>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '5dp'
+        padding: '5dp'
+<BasicStep1_10>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '5dp'
+        padding: '5dp'

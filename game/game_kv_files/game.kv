@@ -1,0 +1,153 @@
+<PreMenuPage2>:
+    CustBoxLayout:
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'app_data/images/buttons/background1.png'
+
+        BoxLayout:
+            id: container
+            orientation: 'vertical'
+            spacing: 20
+            BoxLayout:
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-left.png'
+                    on_press: root.goBack()
+                Label:
+                    text: ''
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-right.png'
+                    on_press: root.goBack()
+
+            Button:
+                text: 'Start a new Game'
+                on_press: root.goToMenu()
+            Button:
+                text: 'Resume my course'
+                on_press: pass
+<MenuPage>:
+    CustBoxLayout:
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'app_data/images/buttons/background1.png'
+
+        BoxLayout:
+            id: container
+            orientation: 'vertical'
+            spacing: 30
+            BoxLayout:
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-left.png'
+                    on_press: root.goBack()
+                Label:
+                    text: ''
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-right.png'
+                    on_press: root.goBack()
+
+            Label:
+                text: 'The Main Menu'
+            Button:
+                text: 'Play My Daily Challenge'
+                on_press: root.goToMenuContent('daily')
+            Button:
+                text: 'Pursue a Course Challenge'
+                on_press: root.goToMenuContent('course')
+            Button:
+                text: 'Play My Bonuses'
+                on_press: root.goToMenuContent('bonuses')
+
+<CourseTour>:
+    CustBoxLayout:
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'app_data/images/buttons/background1.png'
+
+        BoxLayout:
+            id: container
+            orientation: 'vertical'
+            spacing: 30
+            BoxLayout:
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-left.png'
+                    on_press: root.goBack()
+                Label:
+                    text: ''
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-right.png'
+                    on_press: root.goBack()
+
+            Label:
+                text: 'Start Your Course Tour'
+            Button:
+                text: 'Basic Level'
+                on_press: root.playLevel(1)
+            Button:
+                text: 'Intermediate Level'
+                on_press: root.playLevel(2)
+            Button:
+                text: 'Advance Level'
+                on_press: root.playLevel(3)
+<DailyTour>:
+    CustBoxLayout:
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'app_data/images/buttons/background1.png'
+
+        BoxLayout:
+            id: container
+            orientation: 'vertical'
+            spacing: 30
+            BoxLayout:
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-left.png'
+                    on_press: root.goBack()
+                Label:
+                    text: ''
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-right.png'
+                    on_press: root.goBack()
+
+            Label:
+                text: 'Try out Your Daily Challenge'
+<Bonuses>:
+    CustBoxLayout:
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'app_data/images/buttons/background1.png'
+
+        BoxLayout:
+            id: container
+            orientation: 'vertical'
+            spacing: 30
+            BoxLayout:
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-left.png'
+                    on_press: root.goBack()
+                Label:
+                    text: ''
+                Button:
+                    size_hint_x: .1
+                    background_normal: 'app_data/images/buttons/arrow-left.png'
+                    on_press: root.goBack()
+
+            Label:
+                text: 'Your attained bonuses'

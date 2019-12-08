@@ -1,0 +1,353 @@
+
+<MyDragLabel>:
+    drag_rectangle: self.x, self.y, self.width, self.height
+    drag_timeout: 10000000
+    drag_distance: 0
+
+<BasicLevel1>:
+    CustBoxLayout:
+        BoxLayout:
+            border: 120
+            id: container
+            sweep_threshold: .4
+            Carousel:
+                id: carousel
+                ignore_perpendicular_swipes: True
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    padding: [5,5,5,5]
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: root.goBack()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+
+                    Label:
+                        halign: 'center'
+                        font_size: 20
+                        text: 'Welcome To The Basic or Beginner Level\nThis is the start of your quest, and your progress to the \n next level will only be determined\nby the performance in the challenge just completed\nwith the exception of the first challenge.\nGood luck!\nSo Lets get started, shall we?'
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    BoxLayout:
+                        orientation: 'vertical'
+                        spacing: 5
+                        padding: 5
+                        Label:
+                            text: 'Sub - Level 1: Identify and sort'
+                            font_size: 30
+                            halign: 'center'
+                            size_hint_y: .2
+                        Label:
+                            font_size: 22
+                            halign: 'center'
+                            text: " Hi There!\nWelcome to this challenge,\n Your quest starts here.\n Use the top right arrow button to start"
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: '5dp'
+                        spacing: '5dp'
+                        Label:
+                            size_hint_y: .2
+                            text: 'Task 1.1.01: Identify and sort according to shades'
+                            font_size: 20
+                            halign: 'center'
+                        Button:
+                            size_hint_y: .1
+                            text: 'Play'
+                            on_press: root.openContent(task = 1)
+
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: '5dp'
+                        spacing: '5dp'
+                        Label:
+                            size_hint_y: .2
+                            text: 'Task 1.1.02: Identify and sort number of sides'
+                            font_size: 20
+                            halign: 'center'
+                        Button:
+                            size_hint_y: .1
+                            text: 'Play'
+                            on_press: root.openContent(task = 2)
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: '5dp'
+                        spacing: '5dp'
+                        Label:
+                            size_hint_y: .2
+                            text: 'Task 1.1.03: Identify and sort according to color'
+                            font_size: 20
+                            halign: 'center'
+                        Button:
+                            size_hint_y: .1
+                            text: 'Play'
+                            on_press: root.openContent(task = 3)
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: '5dp'
+                        spacing: '5dp'
+                        Label:
+                            text: 'Task 1.1.04: Identify and sort according to color'
+                            font_size: 20
+                            halign: 'center'
+                            size_hint_y: .2
+                        Button:
+                            size_hint_y: .1
+                            text: 'Play'
+                            on_press: root.openContent(task = 4)
+
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: '5dp'
+                        spacing: '5dp'
+                        Label:
+                            size_hint_y: .2
+                            text: 'Task 1.1.05: Identify and sort according to shape'
+                            font_size: 20
+                            halign: 'center'
+                        Button:
+                            size_hint_y: .1
+                            text: 'Play'
+                            on_press: root.openContent(task = 5)
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: '5dp'
+                        spacing: '5dp'
+                        Label:
+                            size_hint_y: .2
+                            text: 'Task 1.1.06: Identify and sort according to color'
+                            font_size: 20
+                            halign: 'center'
+                        Button:
+                            size_hint_y: .1
+                            text: 'Play'
+                            on_press: root.openContent(task = 6)
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: '5dp'
+                        spacing: '5dp'
+                        Label:
+                            size_hint_y: .2
+                            text: 'Task 1.1.07: Identify and sort according to belonging'
+                            font_size: 20
+                            halign: 'center'
+                        Button:
+                            size_hint_y: .1
+                            text: 'Play'
+                            on_press: root.openContent(task = 7)
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: '5dp'
+                        spacing: '5dp'
+                        Label:
+                            size_hint_y: .2
+                            text: 'Task 1.1.08: Identify and sort according group'
+                            font_size: 20
+                            halign: 'center'
+                        Button:
+                            size_hint_y: .1
+                            text: 'Play'
+                            on_press: root.openContent(task = 8)
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-right.png'
+                            on_press: carousel.load_next(mode='next')
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: '5dp'
+                        spacing: '5dp'
+                        Label:
+                            size_hint_y: .2
+                            text: 'Task 1.1.09: Identify and sort according to size'
+                            font_size: 20
+                            halign: 'center'
+                        Button:
+                            size_hint_y: .1
+                            text: 'Play'
+                            on_press: root.openContent(task = 9)
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    BoxLayout:
+                        size_hint_y: .2
+                        Button:
+                            size_hint_x: .1
+                            background_normal: 'app_data/images/buttons/arrow-left.png'
+                            on_press: carousel.load_previous()
+                        Label:
+                            text: ''
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: '5dp'
+                        spacing: '5dp'
+                        Label:
+                            size_hint_y: .2
+                            text: 'Task 1.1.10: Identify and sort according to number'
+                            font_size: 20
+                            halign: 'center'
+                        Button:
+                            size_hint_y: .1
+                            text: 'Play'
+                            on_press: root.openContent(task = 10)
+

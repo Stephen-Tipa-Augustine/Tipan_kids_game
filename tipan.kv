@@ -1,0 +1,70 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+#: include game/game_kv_files/game.kv
+#: include menu/menu_kv_files/menu.kv
+#: include menu/menu_kv_files/setting.kv
+#: include game/game_kv_files/basic-level.kv
+#: include game/game_kv_files/intermediate-level.kv
+#: include game/game_kv_files/advance-level.kv
+
+<CustBoxLayout>:
+    orientation: 'vertical'
+    spacing: 5
+    padding: 5
+
+ScreenManagement:
+    transition: FadeTransition()
+    MenuScreen:
+    GameScreen:
+    SettingScreen:
+
+<MenuScreen>:
+    name: "menu"
+    CustBoxLayout:
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'app_data/images/buttons/start.jpeg'
+
+        BoxLayout:
+            id: container
+            orientation: 'vertical'
+
+            Label:
+                text: 'Hi there! Welcome to the TipanKids Game\nWe are certain you will have fan here.\nSo to get started you click on the below button.'
+                font_size: 35
+                halign: 'center'
+                valign: 'middle'
+            BoxLayout:
+                Label:
+                    text: ''
+                Button:
+                    text: "Get Started"
+                    background_normal: 'app_data/images/buttons/start-game.png'
+                    font_size: 30
+                    on_press: root.goToProfile()
+                Label:
+                    text: ''
+            Label:
+                text: ''
+<SettingScreen>:
+    name: "setting"
+    CustBoxLayout:
+        BoxLayout:
+            orientation: 'vertical'
+            id: container
+            padding: '5dp'
+            spacing: '5dp'
+            Label:
+                text: 'Hi there!'
+
+<GameScreen>:
+    name: "game"
+    CustBoxLayout:
+        BoxLayout:
+            orientation: 'vertical'
+            id: container
+            padding: '5dp'
+            spacing: '5dp'
+            Label:
+                text: 'Hi there!'

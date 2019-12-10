@@ -482,16 +482,20 @@ class TipanApp(App):
         text_input.padding_x = (text_input.width - text_width) / 2
 
     def build(self):
+
+        '''
         self.icon = 'app_data/images/main-icon.png'
         base = 'app_data/audios/'
-        '''
+
         pygame.mixer.init()
         pygame.mixer.music.load(base + 'audio1.mp3')
         pygame.mixer.music.play()
         
-        '''
         audio = Audio(base+'audio3.wav')
         audio.play()
+        
+        '''
+
 
 
 if __name__ == '__main__':
